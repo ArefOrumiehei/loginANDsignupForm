@@ -9,6 +9,7 @@
 .formContainer {
     font-family: 'Inter', sans-serif;
     border: 1px solid silver;
+    border-top: 4px solid #1a73e8;
     width: fit-content;
     padding: 50px;
     margin: 50px;
@@ -74,7 +75,6 @@
     color: red;
     padding: 2px 3px;
     border-radius: 3px;
-    background-color: rgba(255, 0, 0, 0.125);
 }
 
 .checkboxContainer {
@@ -89,18 +89,26 @@
 }
 
 
-.formField:nth-child(6) label {
+.formField:nth-child(6) p {
     color: #1a73e8;
+    text-align: left;
+}
+
+.formField:nth-child(6) span {
+    text-align: center;
+    width: inherit;
 }
 
 input[type = 'checkbox'] {
-    margin-left: 20px;
+    margin-right: 12px;
     width: 18px;
     height: 18px;
     border: 1px solid #1a73e8;
     appearance: none;
+    accent-color: #1a73e8;
     border-radius: 5px;
     transition: all 0.2s ease-in;
+    cursor: pointer;
 }
 
 input[type = 'checkbox']:checked {

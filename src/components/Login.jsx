@@ -17,6 +17,7 @@ const Login = () => {
     const [data , setData] = useState({
         email : '',
         password : '',
+        rememberMe : false ,
     })
 
     const [errors , setErrors] = useState({})
@@ -27,7 +28,11 @@ const Login = () => {
     }, [data , touched])
 
     const inputHandler = (e) => {
+        if (e.target.name === 'rememberMe') {
+        setData({...data , [e.target.name] : e.target.checked})
+        }else {
         setData({...data , [e.target.name] : e.target.value})
+        }
     }
 
     const touchHandler = (e) => {
@@ -42,7 +47,7 @@ const Login = () => {
             notify("error" , "It seems like your login attempt failed. Please check your informations and try again.")
             setTouched({
                 email : true ,
-                password : true ,
+                password : true , 
             })
         }
     }
@@ -72,6 +77,17 @@ const Login = () => {
                         onChange={inputHandler} 
                         onFocus={touchHandler}/>
                     {errors.password && touched.password && <span>{errors.password}</span>}
+                </div>
+                <div className={styles.formField}>
+                    <div className={styles.checkboxContainer}>
+                        <input 
+                            type='checkbox' 
+                            name='rememberMe' 
+                            value={data.rememberMe} 
+                            onChange={inputHandler} 
+                            onFocus={touchHandler}/>
+                        <p>Remember me</p>
+                    </div>
                 </div>
                 <div className={styles.formButtons}>
                     <p>Dont have an account? <Link to='/signup'>SignUp here</Link>.</p>

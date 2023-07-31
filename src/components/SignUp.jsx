@@ -108,13 +108,13 @@ const SignUp = () => {
                 </div>
                 <div className={styles.formField}>
                     <div className={styles.checkboxContainer}>
-                        <label>Please read and accept our<br/> privacy policy before proceeding.</label>
                         <input 
                             type='checkbox' 
                             name='isAccepted' 
                             value={data.isAccepted} 
                             onChange={inputHandler} 
                             onFocus={touchHandler}/>
+                        <p>Please read and accept our privacy <br/> policy before proceeding.</p>
                     </div>
                     {errors.isAccepted && touched.isAccepted && <span>{errors.isAccepted}</span>}
                 </div>
