@@ -36,7 +36,7 @@ export const validate = (data , type) => {
         if (data.isAccepted) {
             delete errors.isAccepted
         }else {
-        errors.isAccepted = 'You must accept the Privacy Policy to continue.'
+            errors.isAccepted = 'You must accept the Privacy Policy to continue.'
         }
     }
     
